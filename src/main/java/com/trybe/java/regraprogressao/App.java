@@ -21,6 +21,7 @@ public class App {
     double[] nota = new double[numActivities];
 
     int totalWeight = 0;
+    double totalPoints = 0.0;
 
     for (int i = 0; i < numActivities; i++) {
       System.out.print("Digite o nome da atividade " + (i + 1) + ": ");
@@ -34,11 +35,18 @@ public class App {
 
       System.out.print("Digite a nota obtida para " + nameActivities[i] + ": ");
       nota[i] = scanner.nextDouble();
+
+      totalPoints += nota[i] * weightActivities[i];
     }
 
     if (totalWeight != 100) {
       System.out.print("A soma dos pesos é diferente de 100!");
       return;
+    }
+
+    double percentage = (totalPoints / totalWeight);
+    if (percentage >= 85.0) {
+      System.out.print("Parabéns! Você alcançou " + percentage + "%! E temos o prazer de informar que você obteve aprovação!");
     }
   }
 }
