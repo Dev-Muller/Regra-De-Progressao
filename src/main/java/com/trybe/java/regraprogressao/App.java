@@ -20,6 +20,8 @@ public class App {
     double[] weightActivities = new double[numActivities];
     double[] nota = new double[numActivities];
 
+    int totalWeight = 0;
+
     for (int i = 0; i < numActivities; i++) {
       System.out.print("Digite o nome da atividade " + (i + 1) + ": ");
       scanner.nextLine();
@@ -27,9 +29,16 @@ public class App {
 
       System.out.print("Digite o peso da atividade " + (i + 1) + ": ");
       weightActivities[i] = scanner.nextDouble();
+
+      totalWeight += weightActivities[i];
+
       System.out.print("Digite a nota obtida para " + nameActivities[i] + ": ");
       nota[i] = scanner.nextDouble();
     }
 
+    if (totalWeight != 100) {
+      System.out.print("A soma dos pesos é diferente de 100!");
+      return;
+    }
   }
 }
