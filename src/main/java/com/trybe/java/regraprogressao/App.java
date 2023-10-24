@@ -18,6 +18,7 @@ public class App {
 
     String[] nameActivities = new String[numActivities];
     double[] weightActivities = new double[numActivities];
+    double[] nota = new double[numActivities];
 
     for (int i = 0; i < numActivities; i++) {
       System.out.print("Digite o nome da atividade " + (i + 1) + ": ");
@@ -26,6 +27,9 @@ public class App {
 
       System.out.print("Digite o peso da atividade " + (i + 1) + ": ");
       weightActivities[i] = scanner.nextDouble();
+      System.out.print("Digite a nota obtida para " + nameActivities[i] + ": ");
+      nota[i] = scanner.nextDouble();
     }
+
   }
 }
