@@ -41,12 +41,19 @@ public class App {
 
     if (totalWeight != 100) {
       System.out.print("A soma dos pesos é diferente de 100!");
-      return;
+      // return;
     }
 
     double percentage = (totalPoints / totalWeight);
-    if (percentage >= 85.0) {
-      System.out.print("Parabéns! Você alcançou " + percentage + "%! E temos o prazer de informar que você obteve aprovação!");
+    if (percentage >= 85) {
+      System.out.print("Parabéns! Você alcançou " + percentage
+          + "%! E temos o prazer de informar que você obteve aprovação!");
+    } else {
+      System.out.print("Lamentamos informar que, "
+            + "com base na sua pontuação alcançada neste período, "
+            + percentage + "%, você não atingiu a pontuação mínima necessária para sua aprovação.");
     }
+
+    scanner.close();
   }
 }
